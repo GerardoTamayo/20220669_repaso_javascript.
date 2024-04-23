@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>a</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container bg-info">
+    <h1>Listando desde un Objeto</h1>
+    <div class="row" id="card_container">
+
+    </div>
+  </div>
+
+  <script>
+
+    const favoritos = [
+      {
+        nombre: "Messi",
+        avatar: './imagenes/messi.jpg',
+        profesion: "Futbolista",
+        pais: "Argentina",
+      },
+      {
+        nombre: "Cristiano Ronaldo",
+        avatar: './imagenes/cristiano.jpg',
+        profesion: "Futbolista",
+        pais: "Portugal",
+      },
+      {
+        nombre: "Emma Watson",
+        avatar: '/imagenes/ema.webp',
+        profesion: "Actriz",
+        pais: "Reino Unido",
+      },
+      {
+        nombre: "Stephen Hawking",
+        avatar: '/imagenes/stephen.avif',
+        profesion: "Físico teórico",
+        pais: "Reino Unido",
+      },
+      {
+        nombre: "Nelson Mandela",
+        avatar: '/imagenes/images.jpg',
+        profesion: "Político",
+        pais: "Sudáfrica",
+      },
+      {
+        nombre: "Marie Curie",
+        avatar: '/imagenes/bv.jpg',
+        profesion: "Física y química",
+        pais: "Polonia",
+      },
+      {
+        nombre: "Albert Einstein",
+        avatar: '/imagenes/a.jpg',
+        profesion: "Físico teórico",
+        pais: "Alemania",
+      },
+      {
+        nombre: "Leonardo da Vinci",
+        avatar: '/imagenes/davinci.jpg',
+        profesion: "Polímata",
+        pais: "Italia",
+      },
+      {
+        nombre: "William Shakespeare",
+        avatar: '/imagenes/d.jpg',
+        profesion: "Dramaturgo",
+        pais: "Reino Unido",
+      },
+      {
+        nombre: "Ludwig van Beethoven",
+        avatar: '/imagenes/c.jpg',
+        profesion: "Compositor",
+        pais: "Alemania",
+      }
+    ];
+
+
+    const card_container = document.getElementById('card_container');
+
+    const cardsUser = favoritos.map(favoritos => `
+    <div class="col-md-4 col-sm-12 mb-4">
+    <div class="card align-items-center text-center">
+      <img src="${favoritos.avatar}" class="" alt="${favoritos.nombre}" width="100">
+      <div class="card-body">
+        <span>Nombre: </span><h6>${favoritos.nombre}</h6>
+        <span>Profesión: </span><h6>${favoritos.profesion}</h6>
+        <span>Pais de origen: </span><h6>${favoritos.pais}</h6>
+      </div>
+    </div>
+  </div>
+    `)
+
+    card_container.innerHTML = cardsUser.join('');
+
+  </script>
+</body>
+
+</html>
